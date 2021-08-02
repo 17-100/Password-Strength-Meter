@@ -44,6 +44,7 @@ header, aside, article, footer {
     border-radius: 11px;
     border:1px solid lightgrey;
     font-size: 28px;
+    max-width: 14rem;
 }
 
 ::placeholder {
@@ -54,7 +55,7 @@ header, aside, article, footer {
 .myDiv {
     border: solid 1px lightgrey;
     border-radius: 3px;
-    max-width: 23rem;
+    max-width: 20rem;
     box-shadow: 0px 5px 5px -5px #293133;
 }
 

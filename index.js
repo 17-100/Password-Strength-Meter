@@ -71,7 +71,7 @@ function CreateAccount() {
                 value={password} onChange={e => setPassword(e.currentTarget.value)} /> 
             <button className="showPWButton" type="button" onClick={togglePwVisibility}>🙈</button>
             <div className='validation'>
-                    <ins style={{fontSize:'12px'}}>Make sure your password contains at least</ins>
+                    <ins style={{fontSize:'10px'}}>Make sure your password contains at least</ins>
             
                 <PwCriteria 
                     atLeast8={atLeast8CharactersLong(password)} 
