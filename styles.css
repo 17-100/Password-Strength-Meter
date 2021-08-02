@@ -54,6 +54,7 @@ header, aside, article, footer {
 .myDiv {
     border: solid 1px lightgrey;
     border-radius: 5px;
+    max-width: 23rem;
 }
 
 .validation p {
