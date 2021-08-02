@@ -4,41 +4,43 @@ function PwCriteria(props) {
     const containsSpecialChars = props.containsSpecialChars;
     const hasLowerCase = props.hasLowerCase;
     const hasCapitalCase = props.hasCapitalCase;
- 
-        /* if (atLeast8) { */
-           /*  return 
-                (
-                <div className='validation'>
-                    <p>✅ and it must be at least 8 characters long</p>
-                </div> 
-                ); */
-        /* }    */
-        /* else {
-            return  
-                (
-                <div className='validation'>
-                    <p>❗ and it must be at least 8 characters long</p>
-                 </div> 
-                );     
-        }; */
-       if(atLeast8 && containsNumber && containsSpecialChars && hasLowerCase && hasCapitalCase) {
-        return (
-            <div className='validation'>
-                    <ins style={{fontSize:'12px'}}>Make sure your password contains at least</ins>
-                    <p>❗ a capital letter</p>
-                    <p>❗ a lowercase letter</p>
-                    <p>❗ a special character</p>
-                    <p>❗ contain a number</p>
-                    <p>❗ and it must be at least 8 characters long</p>
-            </div> 
-            )
-       }
-       else {
-           return (
-                <div>GÖÖÖöY</div>
-           )
-       }
-        
+    var newReturnElement = [];
+
+        if (hasCapitalCase) {
+            newReturnElement.push(<p style={{color:'green'}}>✅ a capital letter</p>)
+        } else {
+            newReturnElement.push(<p style={{color:'red'}}>❗ a capital letter</p>)
+        }
+
+        if (hasLowerCase) {
+            newReturnElement.push(<p style={{color:'green'}}>✅ a lowercase letter</p>)
+        } else {
+            newReturnElement.push(<p style={{color:'red'}}>❗ a lowercase letter</p>)
+        }
+
+        if (containsSpecialChars) {
+            newReturnElement.push(<p>✅ <span style={{color:'green'}}>a special character</span> and</p>)
+        } else {
+            newReturnElement.push(<p>❗ <span style={{color:'red'}}>a special character</span> and</p>)
+        }
+
+        if (containsNumber) {
+            newReturnElement.push(<p>✅ <span style={{color:'green'}}>contain a number</span> and</p>)
+        } else {
+            newReturnElement.push(<p>❗ <span style={{color:'red'}}>contain a number</span> and</p>)
+        }
+       
+        if (atLeast8) {
+            newReturnElement.push(<p style={{color:'green'}}>✅ and it must be at least 8 characters long</p>)
+        } else {
+            newReturnElement.push(<p>❗ and it <span style={{color:'red'}}>must be at least 8 characters long</span></p>)
+        }
+
+                
+
+       return (
+        newReturnElement
+       );
   
     
 }

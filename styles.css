@@ -62,3 +62,8 @@ header, aside, article, footer {
     margin: 5px; 
     font-size: 10px;
 }
+
+.showPWButton {
+    background-color: white;
+    border: none;
+}
