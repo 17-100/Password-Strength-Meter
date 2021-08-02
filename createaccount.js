@@ -29,14 +29,9 @@ function CreateAccount() {
     }
     
     return (
-        <Card
-            bgcolor="transparent"
-            header="Create Account"
-            status={status}
+        <Card bgcolor="transparent" header="Create Account" status={status} title="Register" text="Create your personal account"
             body={show ? (
             <>
-            <h1 style={{color:'black', fontSize:'30px'}}>Register</h1>
-            <h2 style={{color:'grey', fontSize:'20px'}}>Create your personal account</h2>
             <h3 style={{color:'black', fontSize: '16px'}}><br></br>Email address</h3>
             <input type="input" className="inputField" id="name" placeholder="   Enter email..."
                 value={email} onChange={e => setEmail(e.currentTarget.value)} /><br/>
