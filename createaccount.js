@@ -27,6 +27,32 @@ function CreateAccount() {
         setPassword('');
         setShow(true);
     }
+
+    function atLeast8CharactersLong(password) {
+        var pw = password
+        if (pw.length >= 8) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    function containsNumber(password) {
+        return /\d/.test(password);
+    }
+
+    function containsSpecialChars(password){
+        return /[~`!#$%\^&*+=\-\§[\]\\';,/{}|\\":<>\?]/g.test(password);
+    }
+
+    function hasLowerCase(password) {
+        return (/[a-z]/.test(password));
+    }
+
+    function hasCapitalCase(password) {
+        return (/[A-Z]/.test(password));
+    }
     
     return (
         <Card bgcolor="transparent" header="Create Account" status={status} title="Register" text="Create your personal account"
@@ -36,16 +62,15 @@ function CreateAccount() {
             <input type="input" className="inputField" id="name" placeholder="   Enter email..."
                 value={email} onChange={e => setEmail(e.currentTarget.value)} /><br/>
             <h3 style={{color:'black', padding:'10px 0 0 0', fontSize: '16px'}}>Password</h3>
-            <input type="password"  className="inputField" id="name" placeholder="   Enter password..."
+            <input type="input"  className="inputField" id="name" placeholder="   Enter password..."
                 value={password} onChange={e => setPassword(e.currentTarget.value)} />
-            <div className="validation">
-                <ins style={{fontSize:'12px'}}>Make sure your password contains at least</ins>
-                <p>❗ a capital letter</p>
-                <p>❗ a lowercase letter</p>
-                <p>❗ a special character</p>
-                <p>❗ contain a number</p>
-                <p>❗ and it must be at least 8 characters long</p>
-            </div>
+            <PwCriteria 
+                atLeast8={atLeast8CharactersLong(password)} 
+                containsNumber={containsNumber(password)}
+                containsSpecialChars={containsSpecialChars(password)}
+                hasLowerCase={hasLowerCase(password)}
+                hasCapitalCase={hasCapitalCase(password)}
+                />
             <button type="button" className="mybtn" onClick={handleCreate}>REGISTER <br></br>NOW</button>
             </>
             ) : (

@@ -6,6 +6,7 @@ function Card(props) {
                 {props.text && (<h5 className="card-text" style={{color:'grey', fontSize:'20px'}}>{props.text}</h5>)}
                 {props.body}
                 {props.status && (<div id="createStatus">{props.body}</div>)}
+                
             </div>
         </div>
     );
