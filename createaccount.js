@@ -61,3 +61,10 @@ function CreateAccount() {
         />
     );
 }
+
+
+
+ReactDOM.render(
+    <CreateAccount/>, 
+    document.getElementById('root')
+);
