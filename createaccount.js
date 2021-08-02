@@ -67,7 +67,7 @@ function CreateAccount() {
             <input type="input" className="inputField" id="name" placeholder="   Enter email..."
                 value={email} onChange={e => setEmail(e.currentTarget.value)} /><br/>
             <h3 style={{color:'black', padding:'10px 0 0 0', fontSize: '16px'}}>Password</h3>
-            <input type={showPW ? "password" : "text"} className="inputField" id="name" placeholder="   Enter password..."
+            <input type={showPW ? "password" : "text"} webkit-text-security='square' className="inputField" id="name" placeholder="   Enter password..."
                 value={password} onChange={e => setPassword(e.currentTarget.value)} /> 
             <button className="showPWButton" type="button" onClick={togglePwVisibility}>🙈</button>
             <div className='validation'>
@@ -81,7 +81,9 @@ function CreateAccount() {
                     hasCapitalCase={hasCapitalCase(password)}
                     />
             </div>
+            
             <button type="button" className="mybtn" onClick={handleCreate}>REGISTER <br></br>NOW</button>
+            <p style={{fontSize:'7px'}}><input type="checkbox"></input>I have read and accept the terms and conditions</p>
             </>
             ) : (
             <>
